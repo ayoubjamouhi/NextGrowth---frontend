@@ -1,8 +1,9 @@
 import React from 'react';
+import { getDate } from '../helpers/getDate';
 
 
 function Row({user}){
-      const dateDeCreation = new Date(user.createdDate).toString();
+      const dateDeCreation = getDate(user.createdDate);
       let spanColor = '#FDB64D';
       if(user.status === 'Validé')
         spanColor = "#5BE881"
@@ -12,7 +13,19 @@ function Row({user}){
     <tr>
       <td>{user.id}</td>
       <td>{dateDeCreation}</td>
-      <td><span style={{backgroundColor: spanColor}}>{user.status}</span></td>
+      <td className="etat" >
+          <span style={{
+            backgroundColor: spanColor,
+            display: 'block',
+            color: '#fff',
+            width: '70%',
+            margin:'0 auto',
+            borderRadius: '5px',
+            padding: '5px'
+          }}>
+            {user.status}
+            </span>
+      </td>
       <td>{user.firstName}</td>
       <td>{user.lastName}</td>
       <td>{user.userName}</td>
