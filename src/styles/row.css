@@ -1,0 +1,13 @@
+tr{
+  box-sizing: border-box;
+}
+tr td{
+  border-top: 1px solid #dee2e6;
+  padding: 1rem;
+}
+
+button{
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+}
